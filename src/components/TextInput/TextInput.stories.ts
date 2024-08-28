@@ -1,4 +1,4 @@
-import { userEvent, within } from '@storybook/test';
+import { userEvent, within, fn } from '@storybook/test';
 import { TextInput } from "./TextInput";
 import type { Meta } from "@storybook/react";
 
@@ -6,12 +6,13 @@ const meta: Meta<typeof TextInput> = {
   title: "Инпуты",
   component: TextInput,
   tags: ["autodocs"],
+//   args: { onBlur: fn(), onFocus: fn() }
 };
 
 export default meta;
 
 export const EmailInput = {
-    play: async ({canvasElement}) => {
+    play: async ({canvasElement}: { canvasElement: HTMLElement }) => {
         const canvas = within(canvasElement)
         await userEvent.type(canvas.getByPlaceholderText('Enter your email'), 'example@qwe.ue', {
         delay: 200,
@@ -30,7 +31,7 @@ export const TextfieldInput = {
   },
 };
 export const PhoneInput = {
-    play: async ( { canvasElement } ) => {
+    play: async ({canvasElement}: { canvasElement: HTMLElement }) => {
         const canvas = within(canvasElement)
         await userEvent.type(canvas.getByPlaceholderText('+7-922-033-00-00'), '89221231122', {
             delay: 100,
@@ -44,7 +45,7 @@ export const PhoneInput = {
 };
 export const PasswordInput = {
     args: {
-      type: "passsword",
+      type: "password",
       isRequired: true,
       placeholder: "Enter your password",
     },
