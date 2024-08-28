@@ -5,9 +5,9 @@ interface ButtonProps {
   children: ReactNode;
   onClick: () => void;
   appearance?: 'primary' | 'danger';
-  size?: 'l' | 'm' | undefined;
+  size?: 'l' | 'm' | 'regular';
 }
-export const Button = ({ children, onClick, appearance = 'primary', size = undefined}: ButtonProps) => {
+export const Button = ({ children, onClick, appearance = 'primary', size = 'regular'}: ButtonProps) => {
   return <button onClick={onClick} 
   className={`
     ${s.button} 

@@ -19,6 +19,15 @@ export const Primary: Story = {
 }
 
 export const Secondary: Story = {
+    name: 'Второстепенная кнопка',
+    parameters: {
+        docs: {
+            description: {
+                story: 'Средняя кнопка с красным фоном'
+            }
+        }
+    },
+
     args: {
        children: 'Кнопка 2',
        onClick: () => { },
