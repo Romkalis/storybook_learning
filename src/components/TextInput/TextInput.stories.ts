@@ -6,7 +6,7 @@ const meta: Meta<typeof TextInput> = {
   title: "Инпуты",
   component: TextInput,
   tags: ["autodocs"],
-//   args: { onBlur: fn(), onFocus: fn() }
+//   args: { onBlur: fn(), onFocus: fn() } // добавляем аргументы, в них в объекте указываем КЛЮЧОМ, на что отрабатывать onBlur, onClick, onChange и тд, значением fn() импортированный из @storybook/test
 };
 
 export default meta;
