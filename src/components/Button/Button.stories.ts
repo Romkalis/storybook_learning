@@ -23,5 +23,6 @@ export const Secondary: Story = {
        children: 'Кнопка 2',
        onClick: () => { },
        appearance: 'danger',
+       size: 'm'
     }
 }
