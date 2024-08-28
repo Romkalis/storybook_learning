@@ -11,6 +11,11 @@ const meta: Meta<typeof TextInput> = {
 export default meta;
 
 export const EmailInput = {
+    play: async ({canvasElement}) => {
+        const canvas = within(canvasElement)
+        await userEvent.type(canvas.getByPlaceholderText('Enter your email'), 'example@qwe.ue', {
+        delay: 200,
+    })},
   args: {
     type: "email",
     isRequired: true,
