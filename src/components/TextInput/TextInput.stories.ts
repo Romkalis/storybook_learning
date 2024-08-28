@@ -1,3 +1,4 @@
+import { userEvent, within } from '@storybook/test';
 import { TextInput } from "./TextInput";
 import type { Meta } from "@storybook/react";
 
@@ -24,6 +25,12 @@ export const TextfieldInput = {
   },
 };
 export const PhoneInput = {
+    play: async ( { canvasElement } ) => {
+        const canvas = within(canvasElement)
+        await userEvent.type(canvas.getByPlaceholderText('+7-922-033-00-00'), '89221231122', {
+            delay: 100,
+        })
+    },
   args: {
     type: "tel",
     isRequired: true,
@@ -37,16 +44,4 @@ export const PasswordInput = {
       placeholder: "Enter your password",
     },
   };
-
-// interface InputProps {
-//     type: "text" | "email" | "tel" | "password";
-//     value?: string;
-//     isRequired?: boolean;
-//     placeholder?: string;
-//   }
-
-// export const MainTitle = {
-//     args: {
-
-//     }
-// }
+                                                                              
