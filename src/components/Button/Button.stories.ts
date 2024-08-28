@@ -12,9 +12,10 @@ type Story = StoryObj<typeof Button>
 
 export const Primary: Story = {
      args: {
-        children: 'Кнопка',
-        onClick: () => { },
-        appearance: 'primary',
+         children: 'Кнопка',
+         onClick: () => { },
+         appearance: "primary",
+         size: "regular"
      }
 }
 
