@@ -1,9 +1,18 @@
 .button {
-    background-color: red;
     color: white;
     text-transform: uppercase;
     min-width: 15vw;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
+}
+
+.button-danger {
+    background-color: red;
+
+}
+
+.button-primary {
+    background-color: deepskyblue;
+
 }

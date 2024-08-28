@@ -7,6 +7,10 @@ import { Button } from './components/Button/Button'
 function App() {
   const [count, setCount] = useState(0)
 
+  const  countHandler = () => {
+    setCount(prev => prev + 1) 
+  }
+
   return (
     <>
       <div>
@@ -19,13 +23,10 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => {
-          setCount((count) => count + 1); 
-          console.log(count)
-          }}>
+        <button onClick={countHandler}>
           count is
         </button>
-        <Button>{count}</Button>
+        <Button onClick={countHandler}>{count}</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
